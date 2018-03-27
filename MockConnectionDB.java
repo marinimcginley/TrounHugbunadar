@@ -29,7 +29,7 @@ public class MockConnectionDB {
 		return hotels;
 	}
 
-	private static interface QueryDB {
+	/*private static interface QueryDB {
 
 	}
 
@@ -37,7 +37,7 @@ public class MockConnectionDB {
 		public ArrayList<Hotel> getMatchingHotelFromDB(String query) throws ConnectException{
 			throw new ConnectException();
 		}
-	}
+	}*/
 
 
 

@@ -4,13 +4,13 @@ import static org.junit.Assert.*;
 
 
 public class SearchTest {
-	private ArrayList<Hotel> hotels;
+	private static ArrayList<Hotel> hotels;
 
 	@Before
-	public void makeIt() {
+	public void setUp() {
 		try {
 			MockConnectionDB conn = new MockConnectionDB();
-			hotels = conn.getMatchingHotelsFromDB("");
+			hotels = conn.getMatchingHotelFromDB("");
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -34,6 +34,11 @@ public class SearchTest {
 		for (Hotel item : testList) {
 			assert(item.nameOfHotel.contains(querySearch));
 		}
+		
+	}
+
+	public static void main(String[] args) {
+
 	}
 
 
