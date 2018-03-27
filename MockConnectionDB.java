@@ -1,7 +1,7 @@
-import Hotel;
-import java.util.AraryList;
+import java.util.ArrayList;
 import java.net.ConnectException;
-import java.util.Date;
+import java.lang.Object;
+import java.time.LocalDate;
 
 public class MockConnectionDB {
 
@@ -13,11 +13,14 @@ public class MockConnectionDB {
 	public ArrayList<Hotel> getMatchingHotelFromDB(String query) throws ConnectException {
 		ArrayList<Hotel> hotels = new ArrayList<Hotel>();
 		Hotel hotel1 = new Hotel("Hotel Grand", "Reykjavik");
-		hotel1.addRoom(20000, 2, 0, [2018-02-05, 2018-02-06, 2018-02-07]);
+		LocalDate[] array1 = {LocalDate.of(2018,2,5), LocalDate.of(2018,2,6), LocalDate.of(2018,2,7)};
+		hotel1.addRoom(20000, 2, 0, array1);
 		Hotel hotel2 = new Hotel("Hotel Siglufjörður", "Siglufjörður");
-		hotel2.addRoom(15000, 2, 2, [2018-06-05, 2018-06-06, 2018-06-07]);
+		LocalDate[] array2 = {LocalDate.of(2018,6,5), LocalDate.of(2018,6,6), LocalDate.of(2018,6,7)};
+		hotel2.addRoom(15000, 2, 2, array2);
 		Hotel hotel3 = new Hotel("Hotel Akureyri", "Akureyri");
-		hotel3.addRoom(9000, 1, 0, [2018-03-15]);
+		LocalDate[] array3 = {LocalDate.of(2018,3,15)};
+		hotel3.addRoom(9000, 1, 0, array3);
 
 		hotels.add(hotel1);
 		hotels.add(hotel2);
@@ -32,7 +35,7 @@ public class MockConnectionDB {
 
 	public class MockConnectionDB implements QueryDB {
 		public ArrayList<Hotel> getMatchingHotelFromDB(String query) throws ConnectException{
-			throws new ConnectException();
+			throw new ConnectException();
 		}
 	}
 

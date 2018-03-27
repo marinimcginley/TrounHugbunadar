@@ -1,19 +1,17 @@
-import java.util.AraryList;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import java.util.ArrayList;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 
 public class SearchTest {
-	private AraryList<Hotels> hotels;
+	private ArrayList<Hotel> hotels;
 
 	@Before
 	public void makeIt() {
 		try {
 			MockConnectionDB conn = new MockConnectionDB();
 			hotels = conn.getMatchingHotelsFromDB("");
-		} catch (Exteption e) {
+		} catch (Exception e) {
 			System.out.println(e);
 		}
 	}
@@ -28,7 +26,7 @@ public class SearchTest {
 	public void testSearchHotelName() {
 		String querySearch = "Grand";
 
-		AraryList<Hotels> testList = hotels;
+		ArrayList<Hotel> testList = hotels;
 		testList.removeIf(hotel -> !hotel.nameOfHotel.contains(querySearch));
 
 		assertNotNull(testList);

@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.lang.Object;
+import java.time.LocalDate;
+
 public class Hotel {
 	
 	public String nameOfHotel;
@@ -6,8 +10,8 @@ public class Hotel {
 	//public boolean aviableForHandic;
 	//public boolean pickUp;
 	//public boolean breakfastIncluded;
-	public Date checkInStart;
-	public Date checkInFinish;
+	public LocalDate checkInStart;
+	public LocalDate checkInFinish;
 
 	public Hotel(String nameOfHotel, String locationOfHotel) {
 		this.nameOfHotel = nameOfHotel;
@@ -33,9 +37,9 @@ public class Hotel {
 	}*/
 
 	// Býr til herbergi fyrir þetta hótel
-	public addRoom(int priceForNight, int numberOfAdults, int numberOfChildren, Date[] isBooked) {
+	public void addRoom(int priceForNight, int numberOfAdults, int numberOfChildren, LocalDate[] isBooked) {
 		Room roomTest = new Room(priceForNight, numberOfAdults, numberOfChildren, isBooked);
-		rooms.push(roomTest);
+		rooms.add(roomTest);
 	}
 
 	// skilar herbergjum fyrir þetta hotel
