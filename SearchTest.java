@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import org.junit.*;
 import static org.junit.Assert.*;
+import java.time.LocalDate;
 
 
 public class SearchTest {
@@ -35,6 +36,24 @@ public class SearchTest {
 			assert(item.nameOfHotel.contains(querySearch));
 		}
 		
+	}
+
+	@Test
+	public void testSearchHotelByDate() {
+		LocalDate[] querySearch = {LocalDate.of(2018,6,6)};
+
+		ArrayList<Hotel> testList = hotels;
+		// SKIL EKKI ÞESSAR FOKKING LAMBDA SEGÐIR!!!
+		//testList.removeIf(hotel -> !hotel.viewRooms.isAvailable(querySearch)); // loopa í gegnum herbergin??
+
+		assertNotNull(testList);
+		assertFalse(testList.isEmpty());
+		for (Hotel item : testList) {
+			for (Room room : item.viewRooms()) {
+				
+				assert(room.isAvailable(querySearch));
+			}
+		}
 	}
 
 	public static void main(String[] args) {

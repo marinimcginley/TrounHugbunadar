@@ -16,7 +16,7 @@ public class Room {
 
     // Tekur inn lista af dagsetningum í samhangandi röð og tékkar hvort herbergið sé laust
     // Skilar true ef herbergið er laust á inntaki annars false
-    private boolean isAvailable(LocalDate [] date) {
+    public boolean isAvailable(LocalDate [] date) {
         for (int i=0; i<isBooked.length; i++) {
             for (int j=0; j<date.length; j++) {
                 if (isBooked[i].equals(date[j])) return false;
@@ -24,6 +24,8 @@ public class Room {
         }
         return true;
     }
+
+
 
 
 }
