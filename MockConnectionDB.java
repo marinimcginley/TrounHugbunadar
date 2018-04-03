@@ -9,7 +9,6 @@ public class MockConnectionDB {
 
 	}
 
-	// Þurfum að laga hvernig við erum að senda inn dagsetningar. erum að fá villur
 	public ArrayList<Hotel> getMatchingHotelFromDB(String query) throws ConnectException {
 		ArrayList<Hotel> hotels = new ArrayList<Hotel>();
 		Hotel hotel1 = new Hotel("Hotel Grand", "Reykjavik");
@@ -28,17 +27,4 @@ public class MockConnectionDB {
 
 		return hotels;
 	}
-
-	/*private static interface QueryDB {
-
-	}
-
-	public class MockConnectionDB implements QueryDB {
-		public ArrayList<Hotel> getMatchingHotelFromDB(String query) throws ConnectException{
-			throw new ConnectException();
-		}
-	}*/
-
-
-
 }
