@@ -43,8 +43,10 @@ public class SearchTest {
 		LocalDate[] querySearch = {LocalDate.of(2018,6,6)};
 
 		ArrayList<Hotel> testList = hotels;
-		// SKIL EKKI ÞESSAR FOKKING LAMBDA SEGÐIR!!!
-		//testList.removeIf(hotel -> !hotel.viewRooms.isAvailable(querySearch)); // loopa í gegnum herbergin??
+		for(ArrayList<Hotel> hotel: hotels) {
+			ArrayList<Room> roomsList = hotel.viewRooms();
+			roomsList.removeIf(room -> !room.isAvailable(querySearch));
+		}
 
 		assertNotNull(testList);
 		assertFalse(testList.isEmpty());
